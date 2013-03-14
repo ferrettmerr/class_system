@@ -1,0 +1,42 @@
+<h1>Listing uni_classes</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Title</th>
+    <th>Schedule</th>
+    <th>Instructor</th>
+    <th>Room</th>
+    <th>Subject</th>
+    <th></th>
+    <th></th>
+    <% if can? :edit, UniClass %>
+        <th></th>
+    <% end %>
+  </tr>
+
+<% @uni_classes.each do |uni_class| %>
+  <tr>
+    <td><%= uni_class.code %></td>
+    <td><%= uni_class.title %></td>
+    <td><%= uni_class.schedule %></td>
+    <td><%= uni_class.instructor %></td>
+    <td><%= uni_class.room %></td>
+    <td><%= uni_class.subject %></td>
+    <td><%= link_to 'Show', uni_class %></td>
+    <% if can? :edit, UniClass %>
+        <td><%= link_to 'Edit', edit_uni_class_path(uni_class) %></td>
+        <td><%= link_to 'Destroy', uni_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% elsif not current_user.classes.include? uni_class %>
+        <td><%= link_to 'Register', :controller => "uni_classes" , :action => "register", :id => uni_class.id %></td>
+    <% else %>
+        <td>Registered</td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if can? :create, UniClass %>
+<%= link_to 'New Uni class', new_uni_class_path %>
+<% end %>

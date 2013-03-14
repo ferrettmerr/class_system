@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @uni_class.code %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @uni_class.title %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @uni_class.schedule %>
+</p>
+
+<p>
+  <b>Instructor:</b>
+  <%= @uni_class.instructor %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%= @uni_class.room %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @uni_class.subject %>
+</p>
+
+<% if can? :edit, @uni_class %>
+<%= link_to 'Edit', edit_uni_class_path(@uni_class) %> |
+<% end %>
+<%= link_to 'Back', request.referer %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment3</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="centering_div">
+		<div id="banner">
+			<h1> Online Class Registration System</h1>
+		</div>
+		<div id="nav_left">
+			<% if not current_user.nil? %>
+				
+					<ul>
+				<% if can? :edit, User %>
+						<li>
+						<%= link_to "Classes", :controller => "uni_classes" , :action => "index" %>
+						</li>
+						<li>
+							<%= link_to "Students", :controller => "students" , :action => "index" %>
+						</li>
+				<%else %>
+						<li>
+						<%= link_to "Register Classes", :controller => "uni_classes" , :action => "search" %>
+						</li>
+						<li>
+							<%= link_to "My Registration", :controller => "uni_classes" , :action => "my_classes" %>
+						</li>
+				<% end %>
+						<li>
+							<%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
+						</li>
+					</ul>
+			<% end %>
+		</div>
+
+		<div id="content">
+			<%= yield %>
+		</div>
+</body>
+</html>

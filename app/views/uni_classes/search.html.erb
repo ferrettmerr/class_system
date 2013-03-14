@@ -1,0 +1,9 @@
+<%= form_tag uni_classes_path, :method => 'get' do %>
+		<%= label_tag "Subject" %>
+    <%= select_tag :subject, options_from_collection_for_select(@subjects, "to_s", "to_s")%>
+    <br/>
+		<%= label_tag "Instructor" %>
+    <%= text_field_tag :instructor, params[:search] %>
+    <br/>
+    <%= submit_tag "Search" %>
+<% end %>
