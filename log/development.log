@@ -23090,3 +23090,286 @@ Served asset /application.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:34:36 -0400
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-14 08:39:24 -0400
+Processing by UniClassesController#search as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered uni_classes/search.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 103ms (Views: 6.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:24 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:24 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2013-03-14 08:39:27 -0400
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students" [0m
+  Rendered students/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 62ms (Views: 38.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:27 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:27 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/students/1" for 127.0.0.1 at 2013-03-14 08:39:30 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2lyOSU/uq2uxAPxIKvPO3A7rawnaxEITRzJF+g3f8Rw=", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError - undefined method `delete!' for #<User:0x007fd6228882b8>:
+  (gem) activemodel-3.2.9/lib/active_model/attribute_methods.rb:407:in `method_missing'
+  (gem) activerecord-3.2.9/lib/active_record/attribute_methods.rb:149:in `method_missing'
+  app/controllers/students_controller.rb:83:in `destroy'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  (gem) actionpack-3.2.9/lib/abstract_controller/base.rb:167:in `process_action'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/rendering.rb:10:in `process_action'
+  (gem) actionpack-3.2.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:436:in `_run__1235958026750408579__process_action__2941445487717327354__callbacks'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/rescue.rb:29:in `process_action'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  (gem) activesupport-3.2.9/lib/active_support/notifications.rb:123:in `block in instrument'
+  (gem) activesupport-3.2.9/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  (gem) activesupport-3.2.9/lib/active_support/notifications.rb:123:in `instrument'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  (gem) activerecord-3.2.9/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  (gem) actionpack-3.2.9/lib/abstract_controller/base.rb:121:in `process'
+  (gem) actionpack-3.2.9/lib/abstract_controller/rendering.rb:45:in `process'
+  (gem) actionpack-3.2.9/lib/action_controller/metal.rb:203:in `dispatch'
+  (gem) actionpack-3.2.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  (gem) actionpack-3.2.9/lib/action_controller/metal.rb:246:in `block in action'
+  (gem) actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  (gem) actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:36:in `call'
+  (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+  (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/routing/route_set.rb:601:in `call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+  (gem) warden-1.2.1/lib/warden/manager.rb:34:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'
+  (gem) rack-1.4.5/lib/rack/conditionalget.rb:35:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/flash.rb:242:in `call'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+  (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  (gem) activerecord-3.2.9/lib/active_record/query_cache.rb:64:in `call'
+  (gem) activerecord-3.2.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:405:in `_run__4123447183771529522__call__2286090355863005984__callbacks'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:405:in `__run_callback'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  (gem) activesupport-3.2.9/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:84:in `protected_app_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:79:in `better_errors_call'
+  (gem) better_errors-0.7.2/lib/better_errors/middleware.rb:56:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  (gem) railties-3.2.9/lib/rails/rack/logger.rb:32:in `call_app'
+  (gem) railties-3.2.9/lib/rails/rack/logger.rb:16:in `block in call'
+  (gem) activesupport-3.2.9/lib/active_support/tagged_logging.rb:22:in `tagged'
+  (gem) railties-3.2.9/lib/rails/rack/logger.rb:16:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+  (gem) rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+  (gem) activesupport-3.2.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'
+  (gem) actionpack-3.2.9/lib/action_dispatch/middleware/static.rb:62:in `call'
+  (gem) railties-3.2.9/lib/rails/engine.rb:479:in `call'
+  (gem) railties-3.2.9/lib/rails/application.rb:223:in `call'
+  (gem) rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+  (gem) railties-3.2.9/lib/rails/rack/log_tailer.rb:17:in `call'
+  (gem) rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+  /Users/ferrettmerr/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/ferrettmerr/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/ferrettmerr/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70278839623960/variables" for 127.0.0.1 at 2013-03-14 08:39:30 -0400
+
+
+Started DELETE "/students/1" for 127.0.0.1 at 2013-03-14 08:39:45 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2lyOSU/uq2uxAPxIKvPO3A7rawnaxEITRzJF+g3f8Rw=", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUniClass Load (0.1ms)[0m  [1mSELECT "uni_classes".* FROM "uni_classes" INNER JOIN "users_uni_classes" ON "uni_classes"."id" = "users_uni_classes"."uni_class_id" WHERE "users_uni_classes"."user_id" = 2[0m
+  [1m[35m (0.4ms)[0m  DELETE FROM "users_uni_classes" WHERE "users_uni_classes"."user_id" = 2 AND "users_uni_classes"."uni_class_id" IN (2)
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "students" WHERE "students"."id" = ?  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/students
+Completed 302 Found in 125ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2013-03-14 08:39:45 -0400
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students" [0m
+  Rendered students/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:45 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:45 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-03-14 08:39:48 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2lyOSU/uq2uxAPxIKvPO3A7rawnaxEITRzJF+g3f8Rw="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-14 08:39:48 -0400
+Processing by UniClassesController#search as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-03-14 08:39:48 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:48 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:48 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-03-14 08:39:52 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vUc+Zz74PSI82ZCI6FMzZHC8YiXJDemWolI6p2Qors=", "user"=>{"email"=>"ferrettmerr@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'ferrettmerr@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 91ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vUc+Zz74PSI82ZCI6FMzZHC8YiXJDemWolI6p2Qors=", "user"=>{"email"=>"ferrettmerr@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 96ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:52 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:52 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-03-14 08:39:55 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vUc+Zz74PSI82ZCI6FMzZHC8YiXJDemWolI6p2Qors=", "user"=>{"email"=>"ferrettmerr@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ferrettmerr@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-03-14 12:34:34.142478', "current_sign_in_at" = '2013-03-14 12:39:55.616817', "sign_in_count" = 5, "updated_at" = '2013-03-14 12:39:55.617607' WHERE "users"."id" = 1
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 100ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-14 08:39:55 -0400
+Processing by UniClassesController#search as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered uni_classes/search.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:55 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:55 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-03-14 08:39:57 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6vUc+Zz74PSI82ZCI6FMzZHC8YiXJDemWolI6p2Qors="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-14 08:39:57 -0400
+Processing by UniClassesController#search as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-03-14 08:39:57 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:39:57 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:39:57 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-03-14 08:40:02 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ot6AhIHEU7fVXu5TnLRosLHQZcFk90wSMcIpZK3vVI4=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ot6AhIHEU7fVXu5TnLRosLHQZcFk90wSMcIpZK3vVI4=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 105ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2013-03-14 08:40:02 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2013-03-14 08:40:02 -0400
+Served asset /application.js - 304 Not Modified (0ms)

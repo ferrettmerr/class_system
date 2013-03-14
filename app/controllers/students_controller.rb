@@ -78,6 +78,11 @@ class StudentsController < ApplicationController
   # DELETE /students/1.json
   def destroy
     @student = Student.find(params[:id])
+    
+    if not @student.user.nil?
+      @student.user.destroy
+    end
+
     @student.destroy
 
     respond_to do |format|
