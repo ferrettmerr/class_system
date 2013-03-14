@@ -5,13 +5,13 @@ Assignment3::Application.routes.draw do
 
 
   resources :uni_classes
-  match "classes/search" => "uni_classes#search"
+  match "" => "uni_classes#search"
   match "classes/register" => "uni_classes#register"
   match "my_classes" => "uni_classes#my_classes"
   match "deregister" => "uni_classes#deregister"
   devise_for :users
 
-  root :to => redirect("/classes/search")
+  root :to => redirect("")
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

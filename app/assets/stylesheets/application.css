@@ -44,3 +44,7 @@
 	margin: 5px;
 	float:left;
 }
+
+#notice {
+	visibility: hidden;
+}

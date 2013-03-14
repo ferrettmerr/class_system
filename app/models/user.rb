@@ -11,14 +11,16 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :classes, :class_name => UniClass, :join_table => "users_uni_classes"
 
+  has_one :student
   ROLES = %w[student admin]
 
   def table_name
   	return "users_uni_classes"
   end
 
-  
+
   def admin?
   	role == "admin"
   end
+
 end

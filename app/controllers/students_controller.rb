@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+
   # GET /students
   # GET /students.json
   def index
@@ -25,6 +28,8 @@ class StudentsController < ApplicationController
   # GET /students/new.json
   def new
     @student = Student.new
+    current_user.student = @student
+    current_user.save
 
     respond_to do |format|
       format.html # new.html.erb

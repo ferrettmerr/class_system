@@ -29,6 +29,13 @@
 						<li>
 							<%= link_to "My Registration", :controller => "uni_classes" , :action => "my_classes" %>
 						</li>
+						<li>
+							<% if current_user.student.nil? %>
+								<%= link_to "My Profile", :controller => "students" , :action => "new" %>
+							<% else %>
+								<%= link_to "My Profile", :controller => "students" , :action => "edit", :id => current_user.student.id %>
+							<% end %>
+						</li>
 				<% end %>
 						<li>
 							<%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
@@ -38,6 +45,12 @@
 		</div>
 
 		<div id="content">
+			<% if flash[:alert] %>
+	    <p class="flash-error"><%= flash[:alert] %></p>
+		  <% end %>
+		  <% if flash[:notice] %>
+		    <p class="flash-notice"><%= flash[:notice] %></p>
+		  <% end %>
 			<%= yield %>
 		</div>
 </body>

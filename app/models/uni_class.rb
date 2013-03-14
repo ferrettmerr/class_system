@@ -1,7 +1,7 @@
 class UniClass < ActiveRecord::Base
   attr_accessible :code, :instructor, :room, :schedule, :subject, :title
   
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :users, :join_table => "users_uni_classes"
 
   
   def self.search(params)
